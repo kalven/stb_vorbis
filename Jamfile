@@ -1,0 +1,1 @@
+lib stb_vorbis : stb_vorbis.c : <link>static <toolset>msvc:<define>_CRT_SECURE_NO_DEPRECATE : : <include>. ;
