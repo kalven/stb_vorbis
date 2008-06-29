@@ -162,6 +162,11 @@
 #endif
 #endif
 
+#if defined(__APPLE__) && defined(__MACH__)
+#undef HAVE_MALLOC_H
+#else
+#define HAVE_MALLOC_H
+#endif
 
 #ifndef STB_VORBIS_NO_STDIO
 #include <stdio.h>
@@ -172,7 +177,9 @@
 #include <string.h>
 #include <assert.h>
 #include <math.h>
+#ifdef HAVE_MALLOC_H
 #include <malloc.h>
+#endif
 #else
 #define NULL 0
 #endif
